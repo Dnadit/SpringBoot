@@ -8,12 +8,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.pnu.domain.Person;
+import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
 public class BoardController {
 	
 	public BoardController() {
 		System.out.println("===> BoardController 생성");
+		log.info("ddd");
 	}
 	
 	@GetMapping("/hello")
