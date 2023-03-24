@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import edu.pnu.domain.MemberVO;
 import edu.pnu.service.MemberVOService;
-import lombok.extern.slf4j.Slf4j;
+
 
 //@Slf4j
 @RestController

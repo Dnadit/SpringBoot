@@ -12,10 +12,11 @@ import edu.pnu.domain.MemberVO;
 public class MemberVOService {
 	
 	//Date today = new Date();	
-	private List<MemberVO> list = new ArrayList<>();	
+	private List<MemberVO> list;	
 	//SimpleDateFormat date = new SimpleDateFormat("yyyy/MM/dd");	
 	
 	public MemberVOService() {
+		list = new ArrayList<>();
 		list.add(new MemberVO(1, "1111", "홍길동"));
 		list.add(new MemberVO(2, "2222", "김길동"));
 		list.add(new MemberVO(3, "3333", "이길동"));

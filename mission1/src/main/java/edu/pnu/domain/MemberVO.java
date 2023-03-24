@@ -1,7 +1,7 @@
 // Model
 package edu.pnu.domain;
 
-import java.text.SimpleDateFormat;
+
 import java.util.Date;
 
 public class MemberVO {
