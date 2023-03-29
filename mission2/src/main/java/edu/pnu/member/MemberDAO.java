@@ -63,8 +63,8 @@ public class MemberDAO {
 			while(rs.next()) {
 				MemberVO vo = new MemberVO();
 				vo.setId(rs.getInt(1));
-				vo.setName(rs.getString(2));
-				vo.setPass(rs.getString(3));
+				vo.setPass(rs.getString(2));
+				vo.setName(rs.getString(3));
 				vo.setRegidate(rs.getDate(4));
 				
 				list.add(vo);
@@ -87,8 +87,8 @@ public class MemberDAO {
 			
 			while(rs.next()) {				
 				vo.setId(rs.getInt(1));
-				vo.setName(rs.getString(2));
-				vo.setPass(rs.getString(3));
+				vo.setPass(rs.getString(2));
+				vo.setName(rs.getString(3));
 				vo.setRegidate(rs.getDate(4));
 			}
 			return vo;
@@ -99,14 +99,14 @@ public class MemberDAO {
 	}	
 	
 	public MemberVO addMember(MemberVO memberVO) {		 
-		String query = "insert into member(id, name, pass) values(?,?,?)";		
+		String query = "insert into member(id, pass, name) values(?,?,?)";		
 		int num = increaseNum();
 		
 		try {
 			psmt = con.prepareStatement(query);
 			psmt.setInt(1, num);
-			psmt.setString(2, memberVO.getName());
-			psmt.setString(3, memberVO.getPass());
+			psmt.setString(2, memberVO.getPass());
+			psmt.setString(3, memberVO.getName());
 			psmt.executeUpdate();
 			return getMember(num);
 		} catch (SQLException e) {			
@@ -119,24 +119,40 @@ public class MemberDAO {
 	public MemberVO updateMembers(MemberVO memberVO) {
 		try {			
 			String query = "update member set ";
-			int num = 0;
-			if (memberVO.getName() != null) {
-				query += "name=? ";
-				num++;
-			}
-			if (num == 1)
-				query += ",";
-			if (memberVO.getPass() != null) {
-				query += "pass=? ";
-				num++;
-			}			
-			query += "where id=?";
-			num++;			
-			psmt = con.prepareStatement(query);
-			psmt.setString(num-2, memberVO.getName());
-			psmt.setString(num-1, memberVO.getPass());
-			psmt.setInt(num, memberVO.getId());
-			psmt.executeUpdate();
+//			psmt = con.prepareStatement(query);
+//			int num = 0;
+//			if (memberVO.getName() != null) {
+//				query += "name=? ";
+//				num++;
+//			}
+//			if (num == 1)
+//				query += ",";
+//			if (memberVO.getPass() != null) {
+//				query += "pass=? ";
+//				num++;
+//			}			
+//			query += "where id=?";
+//			num++;			
+//			psmt = con.prepareStatement(query);
+//			if(num == 2) {
+//				psmt.setString(num-1, memberVO.getPass());
+//				psmt.setInt(num, memberVO.getId());
+//				psmt.executeUpdate();
+//			} else {
+//				psmt.setString(num-2, memberVO.getName());
+//				psmt.setString(num-1, memberVO.getPass());
+//				psmt.setInt(num, memberVO.getId());
+//				psmt.executeUpdate();
+//			}
+			stmt = con.createStatement();
+			if(memberVO.getPass() != null) 
+				query += "pass=" + "'" + memberVO.getPass() + "'";			
+			if(memberVO.getPass() != null && memberVO.getName() != null)
+				query += ", ";
+			if(memberVO.getName() != null) 
+				query += "name=" + "'" + memberVO.getName() + "'";			
+			query += " where id=" + memberVO.getId();
+			stmt.executeUpdate(query);
 			return getMember(memberVO.getId());
 		} catch (SQLException e) {			
 			e.printStackTrace();	
