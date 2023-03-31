@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+    <typeInfo handle="=mission3/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;edu.pnu.dao{MemberDao.java[MemberDao" modifiers="513" timestamp="1680057235436"/>
+    <typeInfo handle="=mission4/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;edu.pnu.dao.log{LogDao.java[LogDao" modifiers="513" timestamp="1680162344921"/>
+    <typeInfo handle="=mission5/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;edu.pnu.dao{MemberDao.java[MemberDao" modifiers="513" timestamp="1680248396882"/>
+    <typeInfo handle="=mission5/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;edu.pnu.log{LogDao.java[LogDao" modifiers="513" timestamp="1680244992633"/>
+</typeInfoHistroy>
