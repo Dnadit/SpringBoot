@@ -6,6 +6,8 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="D:\Yuhyun\SpringBootQuickStart"/>
+			<item value="D:\Yuhyun\SpringBootQuickStart\mymission5"/>
 			<item value="D:\Yuhyun\SpringBootQuickStart\demo"/>
 			<item value="D:\Yuhyun\SpringBootQuickStart\mymission2"/>
 		</list>
@@ -50,10 +52,12 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="edu.pnu"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="Chapter04"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
