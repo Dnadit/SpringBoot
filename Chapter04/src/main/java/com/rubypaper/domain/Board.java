@@ -57,6 +57,11 @@ public class Board {
 	public void setCnt(Long cnt) {
 		this.cnt = cnt;
 	}
+	@Override
+	public String toString() {
+		return "Board [seq=" + seq + ", title=" + title + ", writer=" + writer + ", content=" + content
+				+ ", createDate=" + createDate + ", cnt=" + cnt + "]";
+	}
 	
 	
 }
