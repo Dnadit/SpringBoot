@@ -31,6 +31,7 @@ public class BoardController {
 	
 	@GetMapping("/getBoard")
 	public void getBoard(Integer id, Model model) {
+		service.increaseCnt(id);
 		model.addAttribute("board", service.findById(id));		
 	}
 	
@@ -40,9 +41,20 @@ public class BoardController {
 	}
 	
 	@PostMapping("/insertBoard")
-	public String insertBoard(Board board, Model model) {
-		service.insertBoard(board);
-		model.addAttribute("boardList", service.findAll());
+	public String insertBoard(Board board) {
+		service.insertBoard(board);		
+		return "redirect:getBoardList";
+	}
+	
+	@PostMapping("/updateBoard")
+	public String updateBoard(Board board) {
+		service.updateBoard(board);		
+		return "redirect:getBoardList";
+	}
+	
+	@GetMapping("/deleteBoard")
+	public String deleteBoard(Integer id) {
+		service.deleteBoard(id);		
 		return "redirect:getBoardList";
 	}
 }

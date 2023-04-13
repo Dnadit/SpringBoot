@@ -11,5 +11,10 @@ public interface BoardService {
 	public Board findById(Integer id);
 	
 	public void insertBoard(Board board);
-
+	
+	public void updateBoard(Board board);
+	
+	public void deleteBoard(Integer id);
+	
+	public void increaseCnt(Integer id);
 }

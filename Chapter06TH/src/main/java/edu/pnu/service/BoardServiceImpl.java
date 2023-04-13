@@ -35,4 +35,28 @@ public class BoardServiceImpl implements BoardService {
 		board.setCnt(0);
 		boardRepo.save(board);
 	}
+	
+	@Override
+	public void updateBoard(Board board) {
+		Board findBoard = boardRepo.findById(board.getId()).get();
+		
+		findBoard.setTitle(board.getTitle());
+		findBoard.setContent(board.getContent());
+		boardRepo.save(findBoard);
+	}
+	
+	@Override
+	public void deleteBoard(Integer id) {
+		Board board = boardRepo.findById(id).get();
+		boardRepo.delete(board);
+	}
+	
+	@Override
+	public void increaseCnt(Integer id) {
+		Board findBoard = boardRepo.findById(id).get();
+		int cnt = findBoard.getCnt();
+		cnt++;
+		findBoard.setCnt(cnt);
+		boardRepo.save(findBoard);
+	}
 }
