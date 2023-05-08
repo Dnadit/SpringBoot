@@ -1,17 +1,14 @@
 package edu.pnu.controller;
 
+import edu.pnu.domain.Member;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class SecurityController {
 		
-	@GetMapping("/")
-	public String index() {
-		System.out.println("index 요청입니다.");
-		return "index";
-	}
-	
 	@GetMapping("/member")
 	public void forMember() {
 		System.out.println("Member 요청입니다.");		
@@ -28,11 +25,17 @@ public class SecurityController {
 	}
 	
 	@GetMapping("/login")
-	public void login() {		
+	public String login() {
+		return "login";
+	}
+
+	@GetMapping("/logout")
+	public String logout() {
+		return "logout";
 	}
 	
 	@GetMapping("/loginSuccess")
-	public void loginSuccess() {
-		
+	public String loginSuccess() {
+		return "loginSuccess";
 	}
 }

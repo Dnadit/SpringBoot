@@ -12,7 +12,7 @@ import edu.pnu.persistence.BoardRepository;
 import edu.pnu.persistence.MemberRepository;
 
 @SpringBootTest
-class Chapter06ThFullApplicationTests {
+class Chapter06ThFullSecurityApplicationTests {
 
 	@Autowired
 	private MemberRepository memberRepo;

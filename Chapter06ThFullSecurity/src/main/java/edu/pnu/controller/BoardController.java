@@ -30,9 +30,7 @@ public class BoardController {
 	}
 	
 	@GetMapping("/getBoardList")
-	public String getBoardList(@ModelAttribute("member") Member member, Model model) {
-		if (member.getId() == null)
-			return "redirect:login";
+	public String getBoardList(Model model) {
 		model.addAttribute("boardList", service.getBoardList());
 		return "getBoardList";
 	}
